@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import "./App.css";
 import { PageOne } from "./organisms";
+import { background} from "./style_variables";
 
 const App = () => (
   <OuterMostContainer>
@@ -9,7 +10,9 @@ const App = () => (
 );
 
 const OuterMostContainer = styled.main`
-  background: #ddd58c;
+  max-width: 1920px;
+  width: 100%;
+  background: ${background};
 `;
 
 export default App;
