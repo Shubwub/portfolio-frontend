@@ -58,6 +58,7 @@ const PageWrapper = styled.div`
   padding: 20px;
   box-sizing: border-box;
   width: 100%;
+  max-width: 1920px;
 `;
 
 const BackgroundImg = styled.div`
