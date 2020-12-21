@@ -1,7 +1,7 @@
 .stroke-2, .stroke {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: dash 5s linear forwards;
+  animation: dash 3s linear forwards;
 }
 
 @keyframes dash {
@@ -13,7 +13,7 @@
 .name-stroke {
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
-  animation: dash 5s linear forwards;
+  animation: dash 3s linear forwards;
   stroke-width: '3px';
 }
 

@@ -18,7 +18,7 @@ export default function PageOne() {
         <Spring
           from={{ fill: background, opacity: 0, stroke: 3 }}
           to={{ fill: secondary, opacity: 1, stroke: 0 }}
-          config={{ delay: 4000 }}
+          config={{ delay: 2500 }}
         >
           {(props) => (
             <Name
@@ -36,7 +36,7 @@ export default function PageOne() {
             keys={(item) => item[0]}
             from={{ transform: "translate3d(0,-40px,0)", opacity: 0 }}
             enter={{ transform: "translate3d(0,0px,0)", opacity: 1 }}
-            config={{ delay: 4000 }}
+            config={{ delay: 2500 }}
           >
             {(item) => (props) => <NavButton style={props} location={item} />}
           </Transition>
