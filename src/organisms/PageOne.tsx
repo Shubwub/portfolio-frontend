@@ -1,9 +1,14 @@
-import styled from "styled-components";
 import { ReactComponent as Komainu } from "../images/komainu.svg";
 import { ReactComponent as Name } from "../images/name.svg";
 import { Spring, Transition } from "react-spring/renderprops";
 import { NavButton } from "../atoms";
-import { background, secondary, medium } from "../style_variables";
+import { background, secondary } from "../style_variables";
+import {
+  LandingPageWrapper,
+  NameContainer,
+  NavButtons,
+  BackgroundImg,
+} from "../styles";
 
 export default function PageOne() {
   const locations = [
@@ -13,7 +18,7 @@ export default function PageOne() {
   ];
 
   return (
-    <PageWrapper>
+    <LandingPageWrapper>
       <NameContainer>
         <Spring
           from={{ fill: background, opacity: 0, stroke: 3 }}
@@ -45,57 +50,6 @@ export default function PageOne() {
       <BackgroundImg>
         <Komainu />
       </BackgroundImg>
-    </PageWrapper>
+    </LandingPageWrapper>
   );
 }
-
-const PageWrapper = styled.div`
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  position: relative;
-  padding: 20px;
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 1920px;
-`;
-
-const BackgroundImg = styled.div`
-  width: 38%;
-  position: absolute;
-  right: 20px;
-  pointer-events: none;
-  @media (max-width: ${medium}px) {
-    width: 80%;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 0;
-  }
-`;
-
-const NameContainer = styled.div`
-  width: 80%;
-  color: ${secondary};
-  display: block;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  @media (max-width: ${medium}px) {
-    width: 100%;
-    z-index: 1;
-  }
-`;
-
-const NavButtons = styled.ul`
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  margin: 0;
-  padding: 0;
-  @media (max-width: ${medium}px) {
-    flex-direction: column;
-  }
-`;

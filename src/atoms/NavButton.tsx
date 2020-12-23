@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { background, accent } from "../style_variables";
+import { Link } from "react-scroll";
 
 export default function NavButton({
   location,
@@ -9,14 +10,14 @@ export default function NavButton({
   style: any;
 }) {
   return (
-    <Button style={style}>
+    <Button style={style} to="about" smooth={true}>
       <NavHead>{location[0]}</NavHead>
       <NavSub>{location[1]}</NavSub>
     </Button>
   );
 }
 
-const Button = styled.a`
+const Button = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,6 +29,7 @@ const Button = styled.a`
   -webkit-text-stroke-color: ${accent};
   transition: 0.3s ease-in-out;
   width: auto;
+  font-weight: 900;
   :hover {
     transition: 0.3s ease-in-out;
     -webkit-text-fill-color: ${accent};
