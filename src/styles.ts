@@ -32,9 +32,6 @@ export const NameContainer = styled.div`
   width: 80%;
   color: ${secondary};
   display: block;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   @media (max-width: ${medium}px) {
     width: 100%;
     z-index: 1;
@@ -53,9 +50,14 @@ export const NavButtons = styled.ul`
 `;
 
 export const PageHeader = styled(NameContainer)`
-  width: 30%;
   position: absolute;
   z-index: 0;
+  height: 200px;
+  width: auto;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 `
 
 export const PageWrapper = styled(LandingPageWrapper)`
@@ -89,6 +91,9 @@ export const Paragraphs = styled.div`
   width: 100%;
   p:nth-child(2) {
     align-self: flex-end;
+  }
+  @media (max-width: ${medium}px) {
+    margin: 80px 0px 0px 0px;
   }
 `
 

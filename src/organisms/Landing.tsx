@@ -10,7 +10,7 @@ import {
   BackgroundImg,
 } from "../styles";
 
-export default function PageOne() {
+export default function Landing() {
   const locations = [
     ["ABOUT", "私について"],
     ["PROJECTS", "プロジェクト"],

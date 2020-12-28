@@ -3,15 +3,15 @@ import {
   PageHeader,
   Paragraph,
   Paragraphs,
-  ParagraphBackgroundImg,
 } from "../styles";
 import { background, secondary } from "../style_variables";
 import { Spring } from "react-spring/renderprops";
-import { ReactComponent as About } from "../images/about.svg";
+import { ReactComponent as AboutText } from "../images/about.svg";
 import TrackVisibility from "react-on-screen";
+import { BackgroundImage } from "../molecules";
 import { ReactComponent as Raifuu } from "../images/raifuu.svg";
 
-export default function PageTwo() {
+export default function About() {
   return (
     <PageWrapper id="about">
       <TrackVisibility once style={{ width: "100%" }}>
@@ -24,7 +24,7 @@ export default function PageTwo() {
                 config={{ delay: 2500 }}
               >
                 {(props) => (
-                  <About
+                  <AboutText
                     fill={secondary}
                     strokeWidth={`${props.stroke}px`}
                     aria-label="ABOUT"
@@ -76,15 +76,9 @@ export default function PageTwo() {
           Sed tempus, enim a aliquet rhoncus, lorem orci tincidunt felis, non
           condimentum augue turpis et nibh. Nunc dapibus accumsan maximus.
         </Paragraph>
-        <TrackVisibility once offset={500} style={{ width: "100%" }}>
-          {({ isVisible }) =>
-            isVisible && (
-              <ParagraphBackgroundImg>
-                <Raifuu />
-              </ParagraphBackgroundImg>
-            )
-          }
-        </TrackVisibility>
+        <BackgroundImage>
+          <Raifuu />
+        </BackgroundImage>
       </Paragraphs>
     </PageWrapper>
   );

@@ -10,7 +10,7 @@ export default function NavButton({
   style: any;
 }) {
   return (
-    <Button style={style} to="about" smooth={true}>
+    <Button style={style} to={location[0].toLowerCase()} smooth={true}>
       <NavHead>{location[0]}</NavHead>
       <NavSub>{location[1]}</NavSub>
     </Button>
