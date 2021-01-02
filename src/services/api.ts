@@ -6,11 +6,19 @@ const instance = axios.create({
 });
 
 export const fetchProjects = async () => {
-  console.log('fetching method');
   try {
     const { data: { projects } } = await instance.get('/projects');
     console.log(projects)
     return projects;
+  } catch (error) {
+    return { error }
+  }
+}
+
+export const fetchBlogs = async () => {
+  try {
+    const { data: { blogs } } = await instance.get('/blogs');
+    return blogs;
   } catch (error) {
     return { error }
   }

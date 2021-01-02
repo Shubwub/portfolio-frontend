@@ -1,32 +1,33 @@
 import { PageWrapper, PageHeader, Paragraph, Paragraphs } from "../styles";
 import { background, secondary } from "../style_variables";
 import { Spring } from "react-spring/renderprops";
-import { ProjectList } from "../molecules";
-import { ReactComponent as ProjectsText } from "../images/projects.svg";
+import { BlogList } from "../molecules";
+import { ReactComponent as BlogText } from "../images/blog.svg";
 import TrackVisibility from "react-on-screen";
 import { useState, useEffect } from "react";
-import { fetchProjects } from "../services/api";
+import { fetchBlogs } from "../services/api";
+import { IBlog } from "../interfaces";
 
 const tempText =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet felis ac dui scelerisque eleifend. Nunc mi est, aliquet ac justo non, rutrum fringilla lorem. Aenean venenatis augue nec massa laoreet, id varius elit scelerisque. Donec mattis erat quam, vel tristique dui fringilla ac. Aliquam aliquam, elit a placerat suscipit, quam nisl lobortis purus, quis pulvinar lacus diam ut urna. Vivamus vel diam ut ligula tincidunt malesuada. Aliquam odio nibh, pellentesque sed turpis eu, tristique pretium turpis. Aliquam  t rutrum leo, eu mollis arcu.";
 
-export default function Projects() {
-  const [projects, setProjects] = useState([]);
+export default function Blog() {
+  const [blogs, setBlogs] = useState<IBlog[]>([]);
 
   useEffect(() => {
-    const getProjects = async () => {
-      const projects = await fetchProjects();
-      setProjects(
-        projects.map((project: any) => {
-          return { ...project, date: new Date(project.date) };
+    const getBlogs = async () => {
+      const blogs = await fetchBlogs();
+      setBlogs(
+        blogs.map((blog: IBlog) => {
+          return { ...blog, date: new Date(blog.date) };
         })
       );
     };
-    getProjects();
+    getBlogs();
   });
 
   return (
-    <PageWrapper id="projects">
+    <PageWrapper id="blog">
       <TrackVisibility once style={{ width: "100%" }}>
         {({ isVisible }) =>
           isVisible && (
@@ -37,7 +38,7 @@ export default function Projects() {
                 config={{ delay: 2500 }}
               >
                 {(props) => (
-                  <ProjectsText
+                  <BlogText
                     fill={secondary}
                     strokeWidth={`${props.stroke}px`}
                     aria-label="Projects"
@@ -52,7 +53,7 @@ export default function Projects() {
       </TrackVisibility>
       <Paragraphs>
         <Paragraph>{tempText}</Paragraph>
-        <ProjectList projects={projects} />
+        <BlogList blogs={blogs} />
       </Paragraphs>
     </PageWrapper>
   );

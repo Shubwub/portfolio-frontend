@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import "./App.css";
-import { Landing, About, Projects } from "./organisms";
+import { Landing, About, Projects, Blog } from "./organisms";
 import { background } from "./style_variables";
 
 const App = () => (
@@ -8,6 +8,7 @@ const App = () => (
     <Landing />
     <About />
     <Projects />
+    <Blog />
   </OuterMostContainer>
 );
 
