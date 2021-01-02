@@ -26,6 +26,7 @@ interface ExpandedProps {
 
 export default function ProjectCard({ project }: { project: any }) {
   const [expanded, toggleExpanded] = useState<boolean>(false);
+  console.log(project, "project");
   const transitions = useTransition(expanded, null, {
     from: { height: "0px" },
     enter: { height: "75px" },
@@ -42,7 +43,9 @@ export default function ProjectCard({ project }: { project: any }) {
               <>
                 <ProjectBorderDiamond />
                 <ProjectBorderSquare />
-                <ProjectSVG src={project.image.replace(/cls-1/gi, "stroke")} />
+                <ProjectSVG
+                  src={project.svg.replace(/cls-1/gi, "stroke")}
+                />
               </>
             )
           }
