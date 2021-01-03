@@ -85,6 +85,22 @@ export const Paragraph = styled.p`
     width   : 70%;
     border-bottom: 3px solid ${accent};
   }
+  a {
+    display: block;
+    border: 2px solid ${accent};
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: ${accent};
+    width: 270px;
+    text-align: center;
+    margin-bottom: 10px;
+    transition: 0.3s ease-in-out;
+    :hover {
+      background: ${accent};
+      transition: 0.3s ease-in-out;
+      color: white;
+    }
+  }
 `
 
 export const Paragraphs = styled.div`
@@ -94,7 +110,7 @@ export const Paragraphs = styled.div`
   align-items: flex-start;
   margin: 80px 50px 0px 50px;
   width: 100%;
-  p:nth-child(2) {
+  p:nth-child(2n) {
     align-self: flex-end;
   }
   @media (max-width: ${medium}px) {
@@ -103,12 +119,10 @@ export const Paragraphs = styled.div`
 `
 
 export const ParagraphBackgroundImg = styled(BackgroundImg)`
-  opacity: 50%;
+  opacity: 40%;
   width: 80%;
-  left: 0;
-  right: 0;
-  bottom: 20%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
   z-index: 0;
 `;
