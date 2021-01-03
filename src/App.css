@@ -1,4 +1,5 @@
-.stroke-2, .stroke {
+.stroke-2,
+.stroke {
   stroke-dasharray: 1500;
   stroke-dashoffset: 1500;
   animation: dash 3s linear forwards;
@@ -14,11 +15,32 @@
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
   animation: dash 3s linear forwards;
-  stroke-width: '3px';
+  stroke-width: "3px";
 }
 
 @keyframes dash {
   to {
     stroke-dashoffset: 0;
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+  transition: 0.3s ease-in-out;
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ddd58c;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ce2525;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar:hover {
+  background: #be2020;
 }
