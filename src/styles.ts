@@ -52,12 +52,17 @@ export const NavButtons = styled.ul`
 export const PageHeader = styled(NameContainer)`
   position: absolute;
   z-index: 0;
+  width: 400px;
   height: 200px;
-  width: auto;
   svg {
     width: 100%;
     height: 100%;
   }
+`
+
+export const ProjectHeader = styled(PageHeader)`
+  width: 600px;
+  height: 200px;
 `
 
 export const PageWrapper = styled(LandingPageWrapper)`

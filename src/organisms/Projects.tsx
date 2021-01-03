@@ -1,4 +1,4 @@
-import { PageWrapper, PageHeader, Paragraph, Paragraphs } from "../styles";
+import { PageWrapper, ProjectHeader, Paragraph, Paragraphs } from "../styles";
 import { background, secondary } from "../style_variables";
 import { Spring } from "react-spring/renderprops";
 import { ProjectList } from "../molecules";
@@ -31,7 +31,7 @@ export default function Projects() {
       <TrackVisibility once style={{ width: "100%" }}>
         {({ isVisible }) =>
           isVisible && (
-            <PageHeader>
+            <ProjectHeader>
               <Spring
                 from={{ fill: background, opacity: 0, stroke: 3 }}
                 to={{ fill: secondary, opacity: 1, stroke: 0 }}
@@ -47,7 +47,7 @@ export default function Projects() {
                   />
                 )}
               </Spring>
-            </PageHeader>
+            </ProjectHeader>
           )
         }
       </TrackVisibility>
