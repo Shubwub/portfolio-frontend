@@ -8,9 +8,6 @@ import { useState, useEffect } from "react";
 import { fetchBlogs } from "../services/api";
 import { IBlog } from "../interfaces";
 
-const tempText: string =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet felis ac dui scelerisque eleifend. Nunc mi est, aliquet ac justo non, rutrum fringilla lorem. Aenean venenatis augue nec massa laoreet, id varius elit scelerisque. Donec mattis erat quam, vel tristique dui fringilla ac. Aliquam aliquam, elit a placerat suscipit, quam nisl lobortis purus, quis pulvinar lacus diam ut urna. Vivamus vel diam ut ligula tincidunt malesuada. Aliquam odio nibh, pellentesque sed turpis eu, tristique pretium turpis. Aliquam  t rutrum leo, eu mollis arcu.";
-
 export default function Blog() {
   const [blogs, setBlogs] = useState<IBlog[]>([]);
 
@@ -52,7 +49,13 @@ export default function Blog() {
         }
       </TrackVisibility>
       <Paragraphs>
-        <Paragraph>{tempText}</Paragraph>
+        <Paragraph>
+          Here I'll be posting blogs, primarily on programming (but not always),
+          about things I come across while working or just thoughts I have that
+          I want to write down. As with the projects, these blogs are pulled
+          from the same remote database through my API. If you have any comments
+          or feedback please feel free to email me with the link provided above.
+        </Paragraph>
         <BlogList blogs={blogs} />
       </Paragraphs>
     </PageWrapper>

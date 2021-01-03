@@ -1,15 +1,16 @@
-import {
-  PageWrapper,
-  PageHeader,
-  Paragraph,
-  Paragraphs,
-} from "../styles";
+import { PageWrapper, PageHeader, Paragraph, Paragraphs } from "../styles";
 import { background, secondary } from "../style_variables";
 import { Spring } from "react-spring/renderprops";
 import { ReactComponent as AboutText } from "../images/about.svg";
 import TrackVisibility from "react-on-screen";
 import { BackgroundImage } from "../molecules";
 import { ReactComponent as Raifuu } from "../images/raifuu.svg";
+
+const calculateAge = (birthday: Date): number => {
+  const ageDifMs = Date.now() - birthday.getTime();
+  const ageDate = new Date(ageDifMs);
+  return Math.abs(ageDate.getUTCFullYear() - 1970);
+};
 
 export default function About() {
   return (
@@ -39,42 +40,42 @@ export default function About() {
       </TrackVisibility>
       <Paragraphs>
         <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit
-          amet felis ac dui scelerisque eleifend. Nunc mi est, aliquet ac justo
-          non, rutrum fringilla lorem. Aenean venenatis augue nec massa laoreet,
-          id varius elit scelerisque. Donec mattis erat quam, vel tristique dui
-          fringilla ac. Aliquam aliquam, elit a placerat suscipit, quam nisl
-          lobortis purus, quis pulvinar lacus diam ut urna. Vivamus vel diam ut
-          ligula tincidunt malesuada. Aliquam odio nibh, pellentesque sed turpis
-          eu, tristique pretium turpis. Aliquam at rutrum leo, eu mollis arcu.
+          Firstly, welcome to my portfolio! This is a site I setup during the
+          end of 2020 as a place to host, display, and discuss the various
+          things I'm working on and have worked on in the past. In this section
+          I'll give some brief information on me as a person so you can get a
+          feel of who I am inside and outside of work.
         </Paragraph>
         <Paragraph>
-          Curabitur sollicitudin dui non neque volutpat pulvinar. Vestibulum a
-          rhoncus lectus. Aliquam purus est, sagittis eu leo non, eleifend
-          pulvinar mi. Sed eget tincidunt lectus. Sed at mi mi. Aliquam vitae
-          purus nisi. Vivamus varius, urna eget ullamcorper dapibus, leo nulla
-          cursus enim, vel dictum augue ligula in nunc. Duis eleifend rutrum
-          luctus. Sed quis gravida dui. Etiam quis vulputate mauris.
-          Pellentesque ac ante pretium, aliquam diam sed, feugiat lectus. Donec
-          vitae tempus orci, at rutrum felis. Phasellus fringilla consectetur
-          justo, in semper lacus malesuada vitae. Nam sit amet nunc sed dolor
-          mollis blandit. Maecenas sed sapien tincidunt, condimentum orci vel,
-          ullamcorper felis.
+          As the top of this page may have alluded to, my name is Cameron
+          Thornton. I'm {calculateAge(new Date("08/10/1997"))} years old, born
+          and raised in Yorkshire in the United Kingdom. I started university at
+          Lancaster University in 2015, studying a Master's Degree in Computer
+          Science. Throughout my time at Lancaster University I primarily used
+          Java - building native applications and working primarily in an OOP
+          setting. There were also smatterings of C, python, erlang, and
+          JavaScript. Towards the end of my degree I picked up an affinity for
+          web and mobile development resulting in my dissertation in my final
+          year where I built an augmented recommendation engine in Python with
+          Django. After graduating university in Summer 2019 with my MSci.
+          Computer Science degree I immediately began work as a full-stack Web
+          Developer at AHC - a digital agency and consultancy specialising in
+          employee benefits. During the first few months of my employment I
+          completed a fulltime full-stack training course at Northcoders where I
+          was formally taught React and Node.JS.
         </Paragraph>
         <Paragraph>
-          Mauris nec pellentesque nunc. Maecenas feugiat nisi lorem, et egestas
-          metus rutrum pharetra. Maecenas mattis nec lectus imperdiet ultricies.
-          Aenean dapibus luctus augue a tristique. Class aptent taciti sociosqu
-          ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris
-          magna augue, convallis at nunc ac, laoreet rutrum magna. Suspendisse
-          pulvinar risus in metus malesuada, ac vulputate odio ultrices.
-          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-          posuere cubilia curae; Curabitur porta felis sed mauris pellentesque,
-          id euismod ex finibus. Mauris ut magna eu sapien congue luctus eu eu
-          turpis. Cras arcu turpis, aliquam eget eleifend et, condimentum eu
-          diam. In hac habitasse platea dictumst. Praesent ut accumsan justo.
-          Sed tempus, enim a aliquet rhoncus, lorem orci tincidunt felis, non
-          condimentum augue turpis et nibh. Nunc dapibus accumsan maximus.
+          In my free time outside of work I like to practise and expand my
+          programming skills by working on small projects and ideas (which can
+          be found below). While most of my industrial experience is in handling
+          the front-end of applications, I like to practise with more full-stack
+          and API projects, as well as a recent expedition into developing
+          mobile apps through React Native. Outside of programming I have a keen
+          interest in Japanse culture and history - hence the theming of
+          traditional Edo-era japanese paintings I've recreated as the design of
+          this page. I've been learning Japanese for over a year now and so each
+          section (aside from my blogs) can also be viewed in Japanese with
+          their respective toggle.
         </Paragraph>
         <BackgroundImage>
           <Raifuu />

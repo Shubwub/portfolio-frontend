@@ -8,9 +8,6 @@ import { useState, useEffect } from "react";
 import { fetchProjects } from "../services/api";
 import { IProject } from "../interfaces";
 
-const tempText =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet felis ac dui scelerisque eleifend. Nunc mi est, aliquet ac justo non, rutrum fringilla lorem. Aenean venenatis augue nec massa laoreet, id varius elit scelerisque. Donec mattis erat quam, vel tristique dui fringilla ac. Aliquam aliquam, elit a placerat suscipit, quam nisl lobortis purus, quis pulvinar lacus diam ut urna. Vivamus vel diam ut ligula tincidunt malesuada. Aliquam odio nibh, pellentesque sed turpis eu, tristique pretium turpis. Aliquam  t rutrum leo, eu mollis arcu.";
-
 export default function Projects() {
   const [projects, setProjects] = useState<IProject[]>([]);
 
@@ -52,7 +49,15 @@ export default function Projects() {
         }
       </TrackVisibility>
       <Paragraphs>
-        <Paragraph>{tempText}</Paragraph>
+        <Paragraph>
+          In this section is a list of personal projects I've worked on that I
+          feel are worth making note of. Each project here is pulled from an
+          externally hosted MongoDB database and fetched with a bespoke API
+          written in Node.JS. The projects listed here are all completed either
+          as part of my university education, or were built in my free time. For
+          more information on a project - each can be expanded to show links to
+          associated GitHub repositories.
+        </Paragraph>
         <ProjectList projects={projects} />
       </Paragraphs>
     </PageWrapper>
