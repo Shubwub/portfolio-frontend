@@ -9,9 +9,10 @@ import { useState } from "react";
 import InlineSVG from "svg-inline-react";
 import TrackVisibility from "react-on-screen";
 import { useTransition, animated } from "react-spring";
+import { IExpandedProps } from "../interfaces";
 
-const parseDate = (date: Date) => {
-  const year = date.getFullYear();
+const parseDate = (date: Date): string => {
+  const year: number = date.getFullYear();
   let month: string = String(date.getMonth() + 1);
   let day: number | string = date.getDate();
 
@@ -20,13 +21,8 @@ const parseDate = (date: Date) => {
   return `${day}/${month}/${year}`;
 };
 
-interface ExpandedProps {
-  expanded: boolean;
-}
-
 export default function ProjectCard({ project }: { project: any }) {
   const [expanded, toggleExpanded] = useState<boolean>(false);
-  console.log(project, "project");
   const transitions = useTransition(expanded, null, {
     from: { height: "0px" },
     enter: { height: "75px" },
@@ -43,9 +39,7 @@ export default function ProjectCard({ project }: { project: any }) {
               <>
                 <ProjectBorderDiamond />
                 <ProjectBorderSquare />
-                <ProjectSVG
-                  src={project.svg.replace(/cls-1/gi, "stroke")}
-                />
+                <ProjectSVG src={project.svg.replace(/cls-1/gi, "stroke")} />
               </>
             )
           }
@@ -121,7 +115,7 @@ const RepoIcon = styled.a`
   }
 `;
 
-const Description = styled(Paragraph)<ExpandedProps>`
+const Description = styled(Paragraph)<IExpandedProps>`
   margin: 0;
   z-index: 1;
   font-size: 1.3rem;

@@ -6,16 +6,17 @@ import { ReactComponent as ProjectsText } from "../images/projects.svg";
 import TrackVisibility from "react-on-screen";
 import { useState, useEffect } from "react";
 import { fetchProjects } from "../services/api";
+import { IProject } from "../interfaces";
 
 const tempText =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet felis ac dui scelerisque eleifend. Nunc mi est, aliquet ac justo non, rutrum fringilla lorem. Aenean venenatis augue nec massa laoreet, id varius elit scelerisque. Donec mattis erat quam, vel tristique dui fringilla ac. Aliquam aliquam, elit a placerat suscipit, quam nisl lobortis purus, quis pulvinar lacus diam ut urna. Vivamus vel diam ut ligula tincidunt malesuada. Aliquam odio nibh, pellentesque sed turpis eu, tristique pretium turpis. Aliquam  t rutrum leo, eu mollis arcu.";
 
 export default function Projects() {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState<IProject[]>([]);
 
   useEffect(() => {
     const getProjects = async () => {
-      const projects = await fetchProjects();
+      const projects: IProject[] = await fetchProjects();
       setProjects(
         projects.map((project: any) => {
           return { ...project, date: new Date(project.date) };

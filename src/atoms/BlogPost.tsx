@@ -6,7 +6,7 @@ import { useState } from "react";
 import { IBlog, ExpandedProps } from "../interfaces";
 
 const parseDate = (date: Date) => {
-  const year = date.getFullYear();
+  const year: number = date.getFullYear();
   let month: string = String(date.getMonth() + 1);
   let day: number | string = date.getDate();
 

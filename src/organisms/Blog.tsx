@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import { fetchBlogs } from "../services/api";
 import { IBlog } from "../interfaces";
 
-const tempText =
+const tempText: string =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet felis ac dui scelerisque eleifend. Nunc mi est, aliquet ac justo non, rutrum fringilla lorem. Aenean venenatis augue nec massa laoreet, id varius elit scelerisque. Donec mattis erat quam, vel tristique dui fringilla ac. Aliquam aliquam, elit a placerat suscipit, quam nisl lobortis purus, quis pulvinar lacus diam ut urna. Vivamus vel diam ut ligula tincidunt malesuada. Aliquam odio nibh, pellentesque sed turpis eu, tristique pretium turpis. Aliquam  t rutrum leo, eu mollis arcu.";
 
 export default function Blog() {
@@ -16,7 +16,7 @@ export default function Blog() {
 
   useEffect(() => {
     const getBlogs = async () => {
-      const blogs = await fetchBlogs();
+      const blogs: IBlog[] = await fetchBlogs();
       setBlogs(
         blogs.map((blog: IBlog) => {
           return { ...blog, date: new Date(blog.date) };
