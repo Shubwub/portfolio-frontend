@@ -15,6 +15,7 @@ export default function Landing() {
     ["ABOUT", "私について"],
     ["PROJECTS", "プロジェクト"],
     ["BLOG", "ブログ（英語）"],
+    ["CONTACT", "メールアドレス"],
   ];
 
   return (

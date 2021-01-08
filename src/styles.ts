@@ -65,6 +65,10 @@ export const ProjectHeader = styled(PageHeader)`
   height: 200px;
 `
 
+export const ContactHeader = styled(ProjectHeader)`
+  position: initial;
+`
+
 export const PageWrapper = styled(LandingPageWrapper)`
   height: auto;
 `
