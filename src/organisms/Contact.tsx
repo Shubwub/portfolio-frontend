@@ -1,5 +1,11 @@
-import { PageWrapper, ContactHeader } from "../styles";
-import { background, secondary, accent } from "../style_variables";
+import { PageWrapper, ProjectHeader } from "../styles";
+import {
+  background,
+  secondary,
+  accent,
+  medium,
+  small,
+} from "../style_variables";
 import { Spring } from "react-spring/renderprops";
 import { ReactComponent as ContactText } from "../images/contact.svg";
 import TrackVisibility from "react-on-screen";
@@ -9,7 +15,7 @@ import { ReactComponent as BorderSVG } from "../images/borderWhite.svg";
 export default function Contact() {
   return (
     <ContactPageWrapper id="contact">
-      <TrackVisibility once offset={200} style={{ width: "100%" }}>
+      <Visibility once offset={200}>
         {({ isVisible }) =>
           isVisible && (
             <ContactHeader>
@@ -31,43 +37,79 @@ export default function Contact() {
             </ContactHeader>
           )
         }
-      </TrackVisibility>
+      </Visibility>
       <ContactInfo>
-        <ContactButton href="mailto:contact@cameronthornton.dev">
+        <ContactButton
+          href="mailto:contact@cameronthornton.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Border />
           <ContactWord>Email</ContactWord>
+          <ContactSub>contact@cameronthornton.dev</ContactSub>
         </ContactButton>
-        <ContactButton href="https://github.com/shubwub">
+        <ContactButton
+          href="https://github.com/shubwub"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Border />
           <ContactWord>Github</ContactWord>
+          <ContactSub>Shubwub</ContactSub>
         </ContactButton>
       </ContactInfo>
     </ContactPageWrapper>
   );
 }
 
-export const ContactPageWrapper = styled(PageWrapper)`
+const ContactHeader = styled(ProjectHeader)`
+  position: initial;
+`;
+
+const Visibility = styled(TrackVisibility)`
+  @media (max-width: ${medium}px) {
+    align-self: flex-start;
+  }
+`;
+
+const ContactPageWrapper = styled(PageWrapper)`
   background: ${accent};
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  flex-wrap: nowrap;
   width: 100vw;
+  @media (max-width: ${medium}px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const ContactInfo = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  padding: 0 50px;
   align-items: center;
+  @media (max-width: 1585px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+  }
 `;
 
 const ContactWord = styled.span`
   margin: 0;
   z-index: 1;
-  font-size: 2rem;
-  transition: 0.2s ease-in-out;
   color: white;
+  font-size: 5rem;
+`;
+
+const ContactSub = styled(ContactWord)`
+  font-size: 2rem;
+  color: white;
+  transition: 0.2s ease-in-out;
+  z-index: 1;
   :before {
     content: "";
     position: absolute;
@@ -98,7 +140,8 @@ const ContactButton = styled.a`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 5px;
+  width: 300px;
+  margin: 0 50px;
   text-decoration: none;
   cursor: pointer;
   &:hover {
@@ -120,4 +163,8 @@ const ContactButton = styled.a`
   }
   padding: 5px 10px;
   position: relative;
+  @media (max-width: 1585px) {
+    margin: 0;
+    margin-bottom: 15px;
+  }
 `;

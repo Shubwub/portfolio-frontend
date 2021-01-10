@@ -58,15 +58,17 @@ export const PageHeader = styled(NameContainer)`
     width: 100%;
     height: 100%;
   }
+  @media (max-width: ${medium}px) {
+    width: 80%;
+  }
 `
 
 export const ProjectHeader = styled(PageHeader)`
   width: 600px;
   height: 200px;
-`
-
-export const ContactHeader = styled(ProjectHeader)`
-  position: initial;
+  @media (max-width: ${medium}px) {
+    width: 80%;
+  }
 `
 
 export const PageWrapper = styled(LandingPageWrapper)`
